@@ -1,14 +1,9 @@
 import css from './ImageGallery.module.css';
+import PropTypes from 'prop-types';
 
-export const ImageGalleryItem = ({
-  id,
-  src,
-  alt,
-  imageClick,
-  largeImageURL,
-}) => {
+export const ImageGalleryItem = ({ src, alt, imageClick, largeImageURL }) => {
   return (
-    <li key={id} className={css.gallery_item}>
+    <li className={css.gallery_item}>
       <img
         className={css.gallery_item_img}
         src={src}
@@ -19,4 +14,11 @@ export const ImageGalleryItem = ({
       />
     </li>
   );
+};
+
+ImageGalleryItem.propTypes = {
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  imageClick: PropTypes.func,
 };

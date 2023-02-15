@@ -1,5 +1,6 @@
 import { ImageGalleryItem } from './ImageGalleryItem';
 import css from './ImageGallery.module.css';
+import PropTypes from 'prop-types';
 
 export const ImageGallery = ({ images, imageClick }) => {
   return (
@@ -18,4 +19,15 @@ export const ImageGallery = ({ images, imageClick }) => {
         })}
     </ul>
   );
+};
+
+ImageGallery.propTypes = {
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      src: PropTypes.string.isRequired,
+      alt: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  imageClick: PropTypes.func,
 };
