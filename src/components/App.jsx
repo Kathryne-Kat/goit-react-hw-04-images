@@ -79,8 +79,8 @@ export default class App extends Component {
     this.setState({ largeImageURL, modalImageOpen: true });
   };
 
-  openModal = () => {
-    this.setState({ modalImageOpen: false });
+  closeModal = () => {
+    this.setState({ modalImageOpen: false, largeImageURL: '' });
   };
 
   render() {
@@ -108,7 +108,7 @@ export default class App extends Component {
         {isLoading && <Loader />}
 
         {modalImageOpen && (
-          <Modal largeImageURL={largeImageURL} openModal={this.openModal} />
+          <Modal largeImageURL={largeImageURL} closeModal={this.closeModal} />
         )}
         <ToastContainer
           position="top-center"

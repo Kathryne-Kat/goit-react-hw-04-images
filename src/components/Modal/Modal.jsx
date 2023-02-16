@@ -12,12 +12,12 @@ export class Modal extends Component {
 
   handleKeyDown = e => {
     if (e.code === 'Escape') {
-      this.props.openModal();
+      this.props.closeModal();
     }
   };
   handleBackdrop = e => {
     if (e.target === e.currentTarget) {
-      this.props.openModal();
+      this.props.closeModal();
     }
   };
 
