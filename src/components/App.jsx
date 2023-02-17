@@ -162,7 +162,7 @@ export default function App() {
   }, [error]);
 
   const getQuery = query => {
-    // if (!query.trim || query === setQuery) {
+    // if (!query.trim || query === query) {
     //   setError('Please, change your request');
     //   return;
     // }
