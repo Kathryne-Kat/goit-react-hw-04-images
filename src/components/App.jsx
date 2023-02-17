@@ -9,6 +9,8 @@ import { ImageGallery } from './ImageGallery/ImageGallery';
 import { Modal } from 'components/Modal/Modal';
 import { Button } from './Button/Button';
 
+//export default const App = () =>
+
 export default function App() {
   const [images, setImages] = useState([]);
   const [page, setPage] = useState(1);
@@ -49,12 +51,13 @@ export default function App() {
     }
   }, [error]);
 
-  const getQuery = query => {
-    // if (!query.trim || query === query) {
-    //   setError('Please, change your request');
-    //   return;
-    // }
-    setQuery(query);
+  const getQuery = newQuery => {
+    //if (!query.trim || query === this.state.query)
+    if (!newQuery.trim() || newQuery === query) {
+      setError('Please, change your request');
+      return;
+    }
+    setQuery(newQuery);
     setPage(1);
     setImages([]);
     setTotalHits(0);
